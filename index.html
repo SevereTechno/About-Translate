@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Severe Techno Translator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Your main stylesheet -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo" id="main-logo">
+            <img src="Severe Techno Logo.svg" alt="icon">
+        </div>
+        <button class="translate-btn" onclick="window.location.href='https://severetechno.github.io/Translate'">Translate</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="about-container">
+        <section class="intro">
+            <h1>About the Translator</h1>
+            <p>Severe Techno Translator is an advanced online translation tool designed to break down language barriers, making communication effortless across different languages. Whether you're a traveler, student, or business professional, we provide a fast, accurate, and easy way to translate text in real-time.</p>
+        </section>
+
+        <section class="features">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Fast & Accurate Translations:</strong> Get real-time translations that are quick and reliable.</li>
+                <li><strong>Multiple Language Support:</strong> Translate between various languages, including popular and regional languages.</li>
+                <li><strong>Voice & Text Input:</strong> Enter text or use voice for faster translation.</li>
+                <li><strong>Secure & Private:</strong> We ensure your translations are kept secure and private with end-to-end encryption.</li>
+            </ul>
+        </section>
+
+        <section class="security">
+            <h2>Security & Privacy</h2>
+            <p>Your data security is our priority. Severe Techno Translator uses robust encryption technology to ensure your translations remain private. We do not store any of your translations after processing, ensuring your content stays secure and confidential.</p>
+        </section>
+
+        <section class="accessibility">
+            <h2>Accessibility</h2>
+            <p>We aim to make Severe Techno Translator available to everyone. Our website is designed to be fully accessible, with keyboard navigation, and compatibility with screen readers to ensure an inclusive user experience.</p>
+        </section>
+
+        <!-- Mobile Translate Button -->
+        <section class="mobile-translate-btn">
+            <button class="translate-btn" onclick="window.location.href='https://severetechno.github.io/Translate'">
+                Translate
+            </button>
+        </section>
+
+        <section class="footer">
+            <p>© 2016-<span id="current-year"></span> Severe Techno. All rights reserved.</p>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Update the footer year dynamically
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+
+        // Toggle Navbar and Mobile Translate Button
+        function toggleMenu() {
+            const navbar = document.getElementById("navbar");
+            const mobileTranslateBtn = document.querySelector(".mobile-translate-btn");
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                navbar.style.display = "none"; // Hide navbar
+                mobileTranslateBtn.style.display = "block"; // Show Translate button
+            } else {
+                navbar.style.display = "flex"; // Show navbar
+                mobileTranslateBtn.style.display = "none"; // Hide Translate button
+            }
+        }
+
+        // Initial check on load
+        document.addEventListener("DOMContentLoaded", toggleMenu);
+
+        // Update on window resize
+        window.addEventListener("resize", toggleMenu);
+    </script>
+</body>
+
+</html>
